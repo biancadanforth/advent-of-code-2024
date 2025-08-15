@@ -2,3 +2,4 @@
 pip-tools # for generating requirements.txt from requirements.in
 pytest # for unit testing
 pytest-xdist # for the pytest -f option (a watch command)
+ruff # for formatting and linting

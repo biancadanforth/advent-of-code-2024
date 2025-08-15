@@ -1,0 +1,17 @@
+[tool.ruff]
+line-length = 88
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint]
+# Enable pycodestyle (E), pyflakes (F), tab indentation (W), and bugbear (B) rules
+select = ["E", "F", "W", "B"]
+
+# Ignore line length violations
+ignore = ["E501"]
+
+[tool.ruff.lint.flake8-quotes]
+docstring-quotes = "double"

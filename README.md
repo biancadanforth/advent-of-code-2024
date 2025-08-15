@@ -20,5 +20,11 @@ source venv/bin/activate
 pip install -r requirements.in
 ```
 
+## To run (all) checks and tests
+```
+ruff check
+pytest
+```
+
 ## To run one of the exercises
 TBD
