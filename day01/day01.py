@@ -38,8 +38,13 @@ class Puzzle:
     @classmethod
     def solve(cls, puzzle_input):
         (first_list, second_list) = cls.parse_input(puzzle_input)
-        # TODO: implement
-        return 1
+        first_list.sort()
+        second_list.sort()
+        total_distance = 0
+        for first_id, second_id in zip(first_list, second_list):
+            diff = abs(first_id - second_id)
+            total_distance += diff
+        return total_distance
 
 
 def main():

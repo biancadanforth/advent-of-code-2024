@@ -35,8 +35,8 @@ class TestPuzzle(object):
         with pytest.raises(ValueError):
             Puzzle.parse_input(puzzle_input)
 
-    # # Example input provided in prompt
-    # def test_solve(self):
-    #     puzzle_input = "3   4\n4   3\n2   5\n1   3\n3   9\n3   3\n"
-    #     expected = 11
-    #     assert Puzzle.solve(puzzle_input) == expected
+    # Example input provided in prompt
+    def test_solve(self):
+        puzzle_input = "3   4\n4   3\n2   5\n1   3\n3   9\n3   3\n"
+        expected = 11
+        assert Puzzle.solve(puzzle_input) == expected
