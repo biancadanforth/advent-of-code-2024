@@ -15,16 +15,38 @@ cd <repo_name>
 python -m venv venv
 source venv/bin/activate
 ```
+You will need to run the second command each time you open or restart your terminal.
 2. Install python packages into the virtual environment
 ```
 pip install -r requirements.in
 ```
 
-## To run (all) checks and tests
+## To run checks and tests
+Make sure your [virtual env is activated](#to-set-up-a-dev-environment).
+
+### Running all tests
 ```
 ruff check
 pytest
 ```
 
+### Running test(s) in a single directory
+Make sure your [virtual env is activated](#to-set-up-a-dev-environment).
+```
+pytest [test file or directory]
+```
+For example, to run the test from `day01`, you could do:
+```
+pytest day01
+```
+
 ## To run one of the exercises
-TBD
+Make sure your [virtual env is activated](#to-set-up-a-dev-environment).
+```
+python path/to/exercise/file
+```
+For example, to run the exercise from `day01`, you could do:
+```
+cd day01
+python day01.js
+```
