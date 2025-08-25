@@ -36,17 +36,42 @@ class Puzzle:
         return (first_list, second_list)
 
     @classmethod
-    def solve(cls, puzzle_input):
+    def solve_part_1(cls, puzzle_input):
         (first_list, second_list) = cls.parse_input(puzzle_input)
-        # TODO: implement
-        return 1
+        first_list.sort()
+        second_list.sort()
+        total_distance = 0
+        for first_id, second_id in zip(first_list, second_list):
+            diff = abs(first_id - second_id)
+            total_distance += diff
+        return total_distance
+
+    @classmethod
+    def solve_part_2(cls, puzzle_input):
+        (first_list, second_list) = cls.parse_input(puzzle_input)
+        total_similarity_score = 0
+        # make an int:int map for the second list of location_id
+        # to frequency.
+        second_list_histogram = dict()
+        for location_id in second_list:
+            if location_id in second_list_histogram:
+                second_list_histogram[location_id] += 1
+            else:
+                second_list_histogram[location_id] = 1
+        for location_id in first_list:
+            if location_id in second_list_histogram:
+                total_similarity_score += (
+                    location_id * second_list_histogram[location_id]
+                )
+        return total_similarity_score
 
 
 def main():
     path = os.path.join(os.path.dirname(__file__), "input")
     with open(path) as f:
         puzzle_input = f.read()
-    print(Puzzle.solve(puzzle_input))
+    print(Puzzle.solve_part_1(puzzle_input))
+    print(Puzzle.solve_part_2(puzzle_input))
 
 
 if __name__ == "__main__":
