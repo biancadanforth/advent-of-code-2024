@@ -36,7 +36,12 @@ class TestPuzzle(object):
             Puzzle.parse_input(puzzle_input)
 
     # Example input provided in prompt
-    def test_solve(self):
+    def test_solve_part_1(self):
         puzzle_input = "3   4\n4   3\n2   5\n1   3\n3   9\n3   3\n"
         expected = 11
-        assert Puzzle.solve(puzzle_input) == expected
+        assert Puzzle.solve_part_1(puzzle_input) == expected
+
+    def test_solve_part_2(self):
+        puzzle_input = "3   4\n4   3\n2   5\n1   3\n3   9\n3   3\n"
+        expected = 31
+        assert Puzzle.solve_part_2(puzzle_input) == expected
